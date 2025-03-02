@@ -55,6 +55,9 @@ public class HelloController {
     @FXML
     private ScrollPane imageScrollPane;
 
+    @FXML
+    private Label totalItemsLabel;
+
 
 
     private List<ImageInfo> currentImages = new ArrayList<>();
@@ -66,12 +69,15 @@ public class HelloController {
      */
     @FXML
     public void initialize() {
-        // Существующий код
+        // Слушаем изменение размера ScrollPane
         imageScrollPane.widthProperty().addListener((obs, oldVal, newVal) -> {
             if (!currentImages.isEmpty()) {
                 displayImages(currentImages);
             }
         });
+
+        // Обновляем информацию о гардеробе
+        updateWardrobeInfo();
 
         loadImagesFromSavedDirectory();
 
@@ -80,10 +86,22 @@ public class HelloController {
     }
 
     /**
-     * Метод для обновления отображения текущих изображений
-     * Публичный метод, который может быть вызван из других контроллеров
+     * Обновляет информацию о гардеробе на главном экране
      */
+    private void updateWardrobeInfo() {
+        WardrobeService wardrobeService = WardrobeService.getInstance();
+        int totalItems = wardrobeService.getAllItems().size();
+
+        // Обновляем метку с общим количеством
+        totalItemsLabel.setText(String.valueOf(totalItems));
+    }
+
+
     public void refreshImages() {
+        // Обновляем информацию о гардеробе
+        updateWardrobeInfo();
+
+        // Обновляем отображение изображений
         if (!currentImages.isEmpty()) {
             displayImages(currentImages);
         }
@@ -144,6 +162,10 @@ public class HelloController {
 
             // Проверяем, изменился ли размер гардероба
             int newWardrobeSize = WardrobeService.getInstance().getAllItems().size();
+
+            // Обновляем информацию о гардеробе в любом случае
+            updateWardrobeInfo();
+
             if (newWardrobeSize != initialWardrobeSize && !currentImages.isEmpty()) {
                 // Обновляем отображение изображений для обновления подсветки
                 displayImages(currentImages);
@@ -474,6 +496,10 @@ public class HelloController {
 
             // Проверяем, изменился ли размер гардероба
             int newWardrobeSize = WardrobeService.getInstance().getAllItems().size();
+
+            // Обновляем информацию о гардеробе в любом случае
+            updateWardrobeInfo();
+
             if (newWardrobeSize != initialWardrobeSize && !currentImages.isEmpty()) {
                 // Обновляем отображение изображений для обновления подсветки
                 displayImages(currentImages);

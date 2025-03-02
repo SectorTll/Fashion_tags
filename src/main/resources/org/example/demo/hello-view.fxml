@@ -32,41 +32,57 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </padding>
         <children>
-            <!-- Легенда для отображения значений цветных полос -->
-            <FlowPane fx:id="legendPane" layoutX="6.0" layoutY="6.0" hgap="15" vgap="5"
-                      AnchorPane.topAnchor="6.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
-                <padding>
-                    <Insets bottom="5.0" top="5.0" />
-                </padding>
+            <!-- Верхняя панель с информацией и легендой -->
+            <HBox spacing="20" layoutX="6.0" layoutY="6.0"
+                  AnchorPane.topAnchor="6.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
 
-                <!-- Элемент легенды для синей полосы сверху -->
-                <HBox alignment="CENTER_LEFT" spacing="5">
-                    <VBox alignment="CENTER" spacing="0">
-                        <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #3498DB;" />
-                        <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
-                    </VBox>
-                    <Label text="Есть связи тегов" />
-                </HBox>
+                <!-- Информация о гардеробе -->
+                <VBox spacing="5">
+                    <Label text="Информация о гардеробе:" style="-fx-font-weight: bold" />
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Всего вещей:" />
+                        <Label fx:id="totalItemsLabel" text="0" style="-fx-font-weight: bold" />
+                    </HBox>
+                </VBox>
 
-                <!-- Элемент легенды для зеленой полосы снизу -->
-                <HBox alignment="CENTER_LEFT" spacing="5">
-                    <VBox alignment="CENTER" spacing="0">
-                        <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
-                        <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #2ECC71;" />
-                    </VBox>
-                    <Label text="В гардеробе" />
-                </HBox>
+                <!-- Разделитель (пустое пространство) -->
+                <Region HBox.hgrow="ALWAYS" />
 
-                <!-- Элемент легенды для обоих случаев -->
-                <HBox alignment="CENTER_LEFT" spacing="5">
-                    <VBox alignment="CENTER" spacing="0">
-                        <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #3498DB;" />
-                        <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
-                        <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #2ECC71;" />
-                    </VBox>
-                    <Label text="В гардеробе и есть связи" />
-                </HBox>
-            </FlowPane>
+                <!-- Легенда для отображения значений цветных полос -->
+                <FlowPane fx:id="legendPane" hgap="15" vgap="5">
+                    <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                    </padding>
+
+                    <!-- Элемент легенды для синей полосы сверху -->
+                    <HBox alignment="CENTER_LEFT" spacing="5">
+                        <VBox alignment="CENTER" spacing="0">
+                            <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #3498DB;" />
+                            <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
+                        </VBox>
+                        <Label text="Есть связи тегов" />
+                    </HBox>
+
+                    <!-- Элемент легенды для зеленой полосы снизу -->
+                    <HBox alignment="CENTER_LEFT" spacing="5">
+                        <VBox alignment="CENTER" spacing="0">
+                            <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
+                            <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #2ECC71;" />
+                        </VBox>
+                        <Label text="В гардеробе" />
+                    </HBox>
+
+                    <!-- Элемент легенды для обоих случаев -->
+                    <HBox alignment="CENTER_LEFT" spacing="5">
+                        <VBox alignment="CENTER" spacing="0">
+                            <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #3498DB;" />
+                            <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
+                            <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #2ECC71;" />
+                        </VBox>
+                        <Label text="В гардеробе и есть связи" />
+                    </HBox>
+                </FlowPane>
+            </HBox>
 
             <ScrollPane fx:id="imageScrollPane" fitToWidth="true" layoutX="6.0" layoutY="60.0"
                         AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="6.0"
