@@ -58,6 +58,9 @@ public class HelloController {
     @FXML
     private Label totalItemsLabel;
 
+    @FXML
+    private Label totalAssociationsLabel;
+
 
 
     private List<ImageInfo> currentImages = new ArrayList<>();
@@ -85,15 +88,16 @@ public class HelloController {
         registerControllerInRoot();
     }
 
-    /**
-     * Обновляет информацию о гардеробе на главном экране
-     */
     private void updateWardrobeInfo() {
+        // Обновляем информацию о гардеробе
         WardrobeService wardrobeService = WardrobeService.getInstance();
         int totalItems = wardrobeService.getAllItems().size();
-
-        // Обновляем метку с общим количеством
         totalItemsLabel.setText(String.valueOf(totalItems));
+
+        // Обновляем информацию о связях
+        TagAssociationsStorage tagAssociationsStorage = TagAssociationsStorage.getInstance();
+        int totalAssociations = tagAssociationsStorage.getAllAssociations().size();
+        totalAssociationsLabel.setText(String.valueOf(totalAssociations));
     }
 
 
