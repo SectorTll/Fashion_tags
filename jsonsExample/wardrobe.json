@@ -1,0 +1,148 @@
+{
+  "allCategories" : [ "Sunglasses", "Jeans", "Blazer", "shoes", "top", "shirt", "footwear", "pants", "Socks", "skirt", "Coat", "boots", "bag" ],
+  "tagStatistics" : {
+    "small" : 1,
+    "wool" : 1,
+    "slim" : 1,
+    "cotton" : 4,
+    "notch lapels" : 1,
+    "Lapel collar" : 1,
+    "straight leg" : 1,
+    "white" : 3,
+    "high heel" : 1,
+    "Beige" : 1,
+    "textured" : 1,
+    "casual" : 9,
+    "tank neckline" : 1,
+    "tall" : 1,
+    "ankle-length" : 1,
+    "open toe" : 1,
+    "Trench" : 1,
+    "solid" : 6,
+    "sneakers" : 1,
+    "mid-calf" : 1,
+    "leather" : 3,
+    "collared" : 1,
+    "knee-length" : 1,
+    "leopard" : 1,
+    "plastic" : 1,
+    "clutch" : 1,
+    "long sleeve" : 1,
+    "Long" : 1,
+    "loose" : 1,
+    "elastic-waist" : 1,
+    "athletic" : 1,
+    "party" : 1,
+    "denim" : 2,
+    "pink" : 1,
+    "yellow" : 1,
+    "long" : 1,
+    "summer" : 1,
+    "Checkered" : 1,
+    "layered" : 1,
+    "paisley" : 1,
+    "high waist" : 1,
+    "crop length" : 1,
+    "buckle detail" : 1,
+    "smooth" : 2,
+    "striped" : 2,
+    "mini" : 1,
+    "heels" : 1,
+    "sleeveless" : 1,
+    "black" : 5,
+    "Casual" : 1,
+    "pencil" : 1,
+    "fitted" : 2,
+    "grey" : 1,
+    "beige" : 1,
+    "full length" : 1,
+    "blue" : 2,
+    "oversized" : 2,
+    "flared" : 1,
+    "short sleeve" : 1,
+    "Double-breasted" : 1,
+    "evening" : 1,
+    "knit" : 1
+  },
+  "allTags" : [ "black", "solid", "plastic", "summer", "oversized", "blue", "denim", "loose", "full length", "casual", "straight leg", "beige", "wool", "long", "smooth", "notch lapels", "leather", "high heel", "open toe", "party", "grey", "striped", "cotton", "fitted", "short sleeve", "white", "long sleeve", "layered", "collared", "sneakers", "paisley", "slim", "ankle-length", "mid-calf", "athletic", "leopard", "knee-length", "pencil", "elastic-waist", "pink", "knit", "sleeveless", "crop length", "textured", "tank neckline", "Beige", "Checkered", "Trench", "Long", "Casual", "Double-breasted", "Lapel collar", "yellow", "flared", "mini", "high waist", "tall", "buckle detail", "small", "clutch", "evening", "heels" ],
+  "categoryStatistics" : {
+    "footwear" : 1,
+    "pants" : 1,
+    "bag" : 1,
+    "Jeans" : 1,
+    "Socks" : 1,
+    "shoes" : 2,
+    "Blazer" : 1,
+    "Sunglasses" : 1,
+    "shirt" : 1,
+    "top" : 2,
+    "skirt" : 2,
+    "boots" : 1,
+    "Coat" : 1
+  },
+  "items" : [ {
+    "category" : "Sunglasses",
+    "tags" : [ "black", "solid", "plastic", "summer", "oversized" ],
+    "file_name" : "image_1015.png"
+  }, {
+    "category" : "Jeans",
+    "tags" : [ "blue", "solid", "denim", "loose", "full length", "casual", "straight leg" ],
+    "file_name" : "image_1015.png"
+  }, {
+    "category" : "Blazer",
+    "tags" : [ "beige", "solid", "wool", "oversized", "long", "smooth", "casual", "notch lapels" ],
+    "file_name" : "image_1015.png"
+  }, {
+    "category" : "shoes",
+    "tags" : [ "black", "leather", "high heel", "open toe", "party" ],
+    "file_name" : "image_1031.png"
+  }, {
+    "category" : "top",
+    "tags" : [ "grey", "striped", "cotton", "fitted", "short sleeve", "casual" ],
+    "file_name" : "image_1031.png"
+  }, {
+    "category" : "shirt",
+    "tags" : [ "white", "striped", "cotton", "long sleeve", "layered", "collared" ],
+    "file_name" : "image_1060.png"
+  }, {
+    "category" : "footwear",
+    "tags" : [ "white", "casual", "leather", "sneakers" ],
+    "file_name" : "image_1088.png"
+  }, {
+    "category" : "pants",
+    "tags" : [ "blue", "paisley", "denim", "slim", "ankle-length", "casual" ],
+    "file_name" : "image_1000.png"
+  }, {
+    "category" : "Socks",
+    "tags" : [ "white", "solid", "cotton", "mid-calf", "athletic" ],
+    "file_name" : "image_1011.png"
+  }, {
+    "category" : "skirt",
+    "tags" : [ "leopard", "knee-length", "pencil", "casual", "elastic-waist" ],
+    "file_name" : "image_617.png"
+  }, {
+    "category" : "top",
+    "tags" : [ "pink", "solid", "knit", "fitted", "sleeveless", "crop length", "textured", "casual", "tank neckline" ],
+    "file_name" : "image_173.png"
+  }, {
+    "category" : "Coat",
+    "tags" : [ "Beige", "Checkered", "Trench", "Long", "Casual", "Double-breasted", "Lapel collar" ],
+    "file_name" : "image_1292.png"
+  }, {
+    "category" : "skirt",
+    "tags" : [ "yellow", "solid", "cotton", "flared", "mini", "smooth", "casual", "high waist" ],
+    "file_name" : "image_1006.png"
+  }, {
+    "category" : "boots",
+    "tags" : [ "black", "leather", "tall", "casual", "buckle detail" ],
+    "file_name" : "image_1036.png"
+  }, {
+    "category" : "bag",
+    "tags" : [ "black", "small", "clutch", "evening" ],
+    "file_name" : "image_1037.png"
+  }, {
+    "category" : "shoes",
+    "tags" : [ "black", "heels" ],
+    "file_name" : "image_107.png"
+  } ]
+}

@@ -1,0 +1,35 @@
+{
+    "is_valid_outfit": true,
+    "error_message": "",
+    "outfit": [
+        {
+            "category": "dress",
+            "tags": [
+                "light blue",
+                "solid color",
+                "wool blend",
+                "fitted",
+                "long sleeve",
+                "mini length",
+                "smooth texture",
+                "evening",
+                "rhinestone embellishment",
+                "v-neckline",
+                "waistless",
+                "lapel collar"
+            ]
+        },
+        {
+            "category": "shoes",
+            "tags": [
+                "white",
+                "solid color",
+                "leather",
+                "pointed toe",
+                "high heel",
+                "smooth texture",
+                "evening"
+            ]
+        }
+    ]
+}

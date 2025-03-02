@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.FlowPane?>
+
+<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.HelloController">
+    <MenuBar>
+        <Menu text="Файл">
+            <MenuItem onAction="#onSelectFolderClick" text="Выбрать папку" />
+            <MenuItem onAction="#onSettingsMenuClick" text="Настройки" />
+        </Menu>
+        <Menu text="Гардероб">
+            <MenuItem text="Просмотр гардероба" onAction="#onViewWardrobeClick" />
+            <MenuItem text="Управление наборами стилей" onAction="#onManageFeelingsClick" />
+            <MenuItem text="Управление погодными условиями" onAction="#onManageWeatherClick" />
+        </Menu>
+    </MenuBar>
+
+    <AnchorPane prefHeight="421.0" prefWidth="563.0" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+        <children>
+            <!-- Легенда для отображения значений цветных полос -->
+            <FlowPane fx:id="legendPane" layoutX="6.0" layoutY="6.0" hgap="15" vgap="5"
+                      AnchorPane.topAnchor="6.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+
+                <!-- Элемент легенды для синей полосы сверху -->
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <VBox alignment="CENTER" spacing="0">
+                        <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #3498DB;" />
+                        <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
+                    </VBox>
+                    <Label text="Есть связи тегов" />
+                </HBox>
+
+                <!-- Элемент легенды для зеленой полосы снизу -->
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <VBox alignment="CENTER" spacing="0">
+                        <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
+                        <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #2ECC71;" />
+                    </VBox>
+                    <Label text="В гардеробе" />
+                </HBox>
+
+                <!-- Элемент легенды для обоих случаев -->
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <VBox alignment="CENTER" spacing="0">
+                        <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #3498DB;" />
+                        <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
+                        <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #2ECC71;" />
+                    </VBox>
+                    <Label text="В гардеробе и есть связи" />
+                </HBox>
+            </FlowPane>
+
+            <ScrollPane fx:id="imageScrollPane" fitToWidth="true" layoutX="6.0" layoutY="60.0"
+                        AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="6.0"
+                        AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="60.0">
+                <GridPane fx:id="imageGrid" hgap="10" vgap="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                </GridPane>
+            </ScrollPane>
+        </children>
+    </AnchorPane>
+
+    <!-- Статус бар -->
+    <HBox spacing="10" style="-fx-background-color: #F0F0F0; -fx-border-width: 1 0 0 0; -fx-border-color: #CCCCCC;">
+        <padding>
+            <Insets bottom="5" left="10" right="10" top="5" />
+        </padding>
+        <children>
+            <Label fx:id="statusLabel" text="Готово" HBox.hgrow="ALWAYS" />
+            <ProgressBar fx:id="loadingProgress" prefHeight="20" prefWidth="200" visible="false" />
+        </children>
+    </HBox>
+</VBox>

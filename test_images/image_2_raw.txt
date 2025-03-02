@@ -1,0 +1,24 @@
+```json
+{
+  "is_valid_outfit": true,
+  "error_message": "",
+  "outfit": [
+    {
+      "category": "blazer",
+      "tags": ["brown", "plaid", "wool", "loose", "long-sleeve", "hip-length", "smooth", "casual", "structured", "notched-collar", "natural-waist", "classic-collar"]
+    },
+    {
+      "category": "dress",
+      "tags": ["white", "graphic", "cotton", "slim", "sleeveless", "mini", "soft", "casual", "printed", "round-neckline", "fitted-waist", "no-collar"]
+    },
+    {
+      "category": "bag",
+      "tags": ["blue", "solid", "leather", "structured", "medium", "formal", "none", "suitable", "handheld", "none", "none", "none"]
+    },
+    {
+      "category": "shoes",
+      "tags": ["black", "solid", "leather", "fitted", "closed-toe", "ankle-length", "smooth", "casual", "simple", "none", "none", "none"]
+    }
+  ]
+}
+```

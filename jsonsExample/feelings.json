@@ -1,0 +1,12 @@
+{
+  "feelings" : [ {
+    "name" : "Тепло1",
+    "styles" : [ "casual", "sport", "elegant" ]
+  }, {
+    "name" : "2",
+    "styles" : [ "date", "work" ]
+  }, {
+    "name" : "фдфсдаф",
+    "styles" : [ "work", "home", "vintage", "travel" ]
+  } ]
+}

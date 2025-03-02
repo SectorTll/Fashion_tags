@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" prefWidth="400" prefHeight="300" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.feelings.FeelingSelectorController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Заголовок -->
+    <Label text="Выбор набора стилей" style="-fx-font-size: 16; -fx-font-weight: bold"/>
+
+    <!-- Комбобокс для выбора набора -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Набор стилей:"/>
+        <ComboBox fx:id="feelingComboBox" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+    </HBox>
+
+    <!-- Отображение стилей выбранного набора -->
+    <Label text="Стили в наборе:"/>
+    <ListView fx:id="stylesListView" VBox.vgrow="ALWAYS"/>
+
+    <!-- Кнопки -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Управление наборами" onAction="#onManageFeelingsClick"/>
+        <Button text="Отмена" onAction="#onCancelClick" cancelButton="true"/>
+        <Button text="Выбрать" onAction="#onSelectClick" defaultButton="true"/>
+    </HBox>
+</VBox>

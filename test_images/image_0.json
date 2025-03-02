@@ -1,0 +1,66 @@
+{
+    "is_valid_outfit": true,
+    "error_message": "",
+    "outfit": [
+        {
+            "category": "blazer",
+            "tags": [
+                "pink",
+                "solid",
+                "linen",
+                "oversized",
+                "long sleeve",
+                "long",
+                "smooth",
+                "fashion event",
+                "structured",
+                "notch neckline",
+                "straight waist",
+                "no collar"
+            ]
+        },
+        {
+            "category": "dress",
+            "tags": [
+                "neutral",
+                "solid",
+                "cotton",
+                "fitted",
+                "sleeveless",
+                "mini",
+                "smooth",
+                "casual",
+                "simple",
+                "round neckline",
+                "natural waist",
+                "no collar"
+            ]
+        },
+        {
+            "category": "bag",
+            "tags": [
+                "beige",
+                "woven",
+                "straw",
+                "medium",
+                "textured",
+                "casual",
+                "tote style"
+            ]
+        },
+        {
+            "category": "shoes",
+            "tags": [
+                "blue",
+                "solid",
+                "leather",
+                "strappy",
+                "open toe",
+                "high heel",
+                "smooth",
+                "evening",
+                "tassel detail"
+            ]
+        }
+    ]
+}

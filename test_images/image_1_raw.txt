@@ -1,0 +1,82 @@
+```json
+{
+  "is_valid_outfit": true,
+  "error_message": "",
+  "outfit": [
+    {
+      "category": "blazer",
+      "tags": [
+        "gray",
+        "plaid",
+        "wool",
+        "loose-fit",
+        "long-sleeve",
+        "hip-length",
+        "smooth",
+        "formal",
+        "double-breasted",
+        "notch",
+        "natural",
+        "no-collar"
+      ]
+    },
+    {
+      "category": "skirt",
+      "tags": [
+        "gray",
+        "plaid",
+        "wool",
+        "regular-fit",
+        "below-knee",
+        "smooth",
+        "formal",
+        "high-waist"
+      ]
+    },
+    {
+      "category": "top",
+      "tags": [
+        "white",
+        "solid",
+        "cotton",
+        "tight-fit",
+        "long-sleeve",
+        "hip-length",
+        "soft",
+        "casual",
+        "round-neck",
+        "no-waist"
+      ]
+    },
+    {
+      "category": "bag",
+      "tags": [
+        "brown",
+        "leather",
+        "crossbody",
+        "small",
+        "casual"
+      ]
+    },
+    {
+      "category": "socks",
+      "tags": [
+        "white",
+        "solid",
+        "cotton",
+        "knee-length",
+        "ribbed",
+        "casual"
+      ]
+    },
+    {
+      "category": "shoes",
+      "tags": [
+        "black",
+        "leather",
+        "mary-jane"
+      ]
+    }
+  ]
+}
+```

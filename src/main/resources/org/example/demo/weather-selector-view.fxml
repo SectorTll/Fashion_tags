@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" prefWidth="400" prefHeight="300" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.weather.WeatherSelectorController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Заголовок -->
+    <Label text="Выбор погодных условий" style="-fx-font-size: 16; -fx-font-weight: bold"/>
+
+    <!-- Комбобокс для выбора погодных условий -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Погодные условия:"/>
+        <ComboBox fx:id="weatherComboBox" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+    </HBox>
+
+    <!-- Информация о выбранном погодном условии -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Выбрано:"/>
+        <Label fx:id="selectedWeatherLabel" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <!-- Кнопки -->
+    <HBox spacing="10" alignment="CENTER_RIGHT" VBox.vgrow="ALWAYS">
+        <VBox.margin>
+            <Insets top="20"/>
+        </VBox.margin>
+        <Button text="Управление погодой" onAction="#onManageWeatherClick"/>
+        <Button text="Отмена" onAction="#onCancelClick" cancelButton="true"/>
+        <Button text="Выбрать" onAction="#onSelectClick" defaultButton="true"/>
+    </HBox>
+</VBox>

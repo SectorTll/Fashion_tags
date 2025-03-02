@@ -1,0 +1,225 @@
+{
+  "tag_associations" : [ {
+    "image_file_name" : "image_1000.png",
+    "original" : [ {
+      "category" : "top",
+      "tags" : [ "yellow", "sleeveless", "leather", "fitted", "zipper", "collar", "casual" ]
+    }, {
+      "category" : "pants",
+      "tags" : [ "blue", "paisley", "denim", "slim", "ankle-length", "casual" ]
+    }, {
+      "category" : "shoes",
+      "tags" : [ "black", "suede", "ankle", "boots", "autumn" ]
+    } ],
+    "reference" : [ {
+      "category" : "top",
+      "tags" : [ "grey", "striped", "cotton", "fitted", "short sleeve", "casual" ]
+    }, {
+      "category" : "shirt",
+      "tags" : [ "white", "striped", "cotton", "long sleeve", "layered", "collared" ]
+    }, {
+      "category" : "footwear",
+      "tags" : [ "white", "casual", "leather", "sneakers" ]
+    } ],
+    "weather" : {
+      "condition" : "storm",
+      "temperature" : 20
+    },
+    "feeling" : {
+      "name" : "2",
+      "styles" : [ "date", "work" ]
+    }
+  }, {
+    "image_file_name" : "image_1001.png",
+    "original" : [ {
+      "category" : "dress",
+      "tags" : [ "black", "solid", "fabric", "loose fit", "long sleeve", "short length", "smooth texture", "casual", "wrap design", "v-neckline", "tie waist" ]
+    }, {
+      "category" : "shoes",
+      "tags" : [ "black", "solid", "leather", "strappy", "high heels", "dressed", "open-toe" ]
+    } ],
+    "reference" : [ {
+      "category" : "shoes",
+      "tags" : [ "black", "leather", "high heel", "open toe", "party" ]
+    } ],
+    "weather" : {
+      "condition" : "heavy rain",
+      "temperature" : 20
+    },
+    "feeling" : {
+      "name" : "2",
+      "styles" : [ "date", "work" ]
+    }
+  }, {
+    "image_file_name" : "image_1003.png",
+    "original" : [ {
+      "category" : "coat",
+      "tags" : [ "orange", "solid", "wool", "fitted", "long", "textured", "casual", "gold buttons", "band collar" ]
+    }, {
+      "category" : "skirt",
+      "tags" : [ "orange", "solid", "wool", "fitted", "above-knee", "textured", "casual" ]
+    }, {
+      "category" : "shoes",
+      "tags" : [ "yellow", "solid", "leather", "closed toe", "heels", "formal" ]
+    }, {
+      "category" : "bag",
+      "tags" : [ "pink", "chain strap", "leather", "small", "textured", "casual" ]
+    } ],
+    "reference" : [ {
+      "category" : "top",
+      "tags" : [ "grey", "striped", "cotton", "fitted", "short sleeve", "casual" ]
+    }, {
+      "category" : "shoes",
+      "tags" : [ "black", "leather", "high heel", "open toe", "party" ]
+    }, {
+      "category" : "Blazer",
+      "tags" : [ "beige", "solid", "wool", "oversized", "long", "smooth", "casual", "notch lapels" ]
+    } ],
+    "weather" : {
+      "condition" : "foggy",
+      "temperature" : 20
+    },
+    "feeling" : {
+      "name" : "2",
+      "styles" : [ "date", "work" ]
+    }
+  }, {
+    "image_file_name" : "image_102.png",
+    "original" : [ {
+      "category" : "blazer",
+      "tags" : [ "black", "solid", "wool", "tailored", "long sleeve", "hip length", "smooth", "formal", "single button", "notch lapel" ]
+    }, {
+      "category" : "pants",
+      "tags" : [ "black", "solid", "wool", "straight", "ankle length", "smooth", "formal", "mid rise" ]
+    }, {
+      "category" : "shoes",
+      "tags" : [ "black", "solid", "leather", "flat", "slip-on", "comfortable", "casual", "round toe" ]
+    } ],
+    "reference" : [ {
+      "category" : "Blazer",
+      "tags" : [ "beige", "solid", "wool", "oversized", "long", "smooth", "casual", "notch lapels" ]
+    } ],
+    "weather" : null,
+    "feeling" : null
+  }, {
+    "image_file_name" : "image_1036.png",
+    "original" : [ {
+      "category" : "top",
+      "tags" : [ "navy", "embroidered", "cotton", "fitted", "long sleeve", "cropped", "soft", "casual", "embroidery detail", "v-neck", "narrow waist", "no collar" ]
+    }, {
+      "category" : "skirt",
+      "tags" : [ "beige", "striped", "linen", "fitted", "mini", "ruffled", "casual", "high waist" ]
+    }, {
+      "category" : "boots",
+      "tags" : [ "black", "leather", "tall", "casual", "buckle detail" ]
+    } ],
+    "reference" : [ {
+      "category" : "shirt",
+      "tags" : [ "white", "striped", "cotton", "long sleeve", "layered", "collared" ]
+    } ],
+    "weather" : null,
+    "feeling" : null
+  }, {
+    "image_file_name" : "image_1037.png",
+    "original" : [ {
+      "category" : "top",
+      "tags" : [ "grey", "long-sleeve", "wrap", "casual" ]
+    }, {
+      "category" : "skirt",
+      "tags" : [ "red", "mini", "day", "solid" ]
+    }, {
+      "category" : "bag",
+      "tags" : [ "black", "small", "clutch", "evening" ]
+    }, {
+      "category" : "shoes",
+      "tags" : [ "black", "block-heel", "sandals", "party" ]
+    } ],
+    "reference" : [ {
+      "category" : "top",
+      "tags" : [ "grey", "striped", "cotton", "fitted", "short sleeve", "casual" ]
+    } ],
+    "weather" : null,
+    "feeling" : null
+  }, {
+    "image_file_name" : "image_1004.png",
+    "original" : [ {
+      "category" : "dress",
+      "tags" : [ "white", "solid", "stiff", "fit-and-flare", "strapless", "short", "smooth", "party", "floral embroidery", "strapless", "natural", "no collar" ]
+    }, {
+      "category" : "shoes",
+      "tags" : [ "black", "solid", "leather", "strappy", "high heels", "smooth", "evening", "ankle laces" ]
+    } ],
+    "reference" : [ {
+      "category" : "Jeans",
+      "tags" : [ "blue", "solid", "denim", "loose", "full length", "casual", "straight leg" ]
+    }, {
+      "category" : "Blazer",
+      "tags" : [ "beige", "solid", "wool", "oversized", "long", "smooth", "casual", "notch lapels" ]
+    }, {
+      "category" : "shirt",
+      "tags" : [ "white", "striped", "cotton", "long sleeve", "layered", "collared" ]
+    } ],
+    "weather" : {
+      "condition" : "heavy rain",
+      "temperature" : 20
+    },
+    "feeling" : {
+      "name" : "2",
+      "styles" : [ "date", "work" ]
+    }
+  }, {
+    "image_file_name" : "image_107.png",
+    "original" : [ {
+      "category" : "jumpsuit",
+      "tags" : [ "black", "sequin", "satin", "fitted", "long sleeve", "full length", "shiny", "evening", "tuxedo style", "v-neck", "high waist", "no collar" ]
+    }, {
+      "category" : "shoes",
+      "tags" : [ "black", "heels" ]
+    } ],
+    "reference" : [ {
+      "category" : "top",
+      "tags" : [ "grey", "striped", "cotton", "fitted", "short sleeve", "casual" ]
+    }, {
+      "category" : "shoes",
+      "tags" : [ "black", "leather", "high heel", "open toe", "party" ]
+    }, {
+      "category" : "Blazer",
+      "tags" : [ "beige", "solid", "wool", "oversized", "long", "smooth", "casual", "notch lapels" ]
+    } ],
+    "weather" : {
+      "condition" : "heavy rain",
+      "temperature" : 20
+    },
+    "feeling" : {
+      "name" : "Тепло1",
+      "styles" : [ "casual", "sport", "elegant" ]
+    }
+  }, {
+    "image_file_name" : "image_1006.png",
+    "original" : [ {
+      "category" : "top",
+      "tags" : [ "white", "solid", "cotton", "tight", "short sleeve", "hip length", "smooth", "casual", "scoop neckline" ]
+    }, {
+      "category" : "skirt",
+      "tags" : [ "yellow", "solid", "cotton", "flared", "mini", "smooth", "casual", "high waist" ]
+    }, {
+      "category" : "shoes",
+      "tags" : [ "white", "solid", "sneakers", "casual" ]
+    } ],
+    "reference" : [ {
+      "category" : "Blazer",
+      "tags" : [ "beige", "solid", "wool", "oversized", "long", "smooth", "casual", "notch lapels" ]
+    }, {
+      "category" : "shoes",
+      "tags" : [ "black", "leather", "high heel", "open toe", "party" ]
+    } ],
+    "weather" : {
+      "condition" : "foggy",
+      "temperature" : 20
+    },
+    "feeling" : {
+      "name" : "фдфсдаф",
+      "styles" : [ "work", "home", "vintage", "travel" ]
+    }
+  } ]
+}

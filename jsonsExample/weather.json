@@ -1,0 +1,18 @@
+{
+  "weather_conditions" : [ {
+    "condition" : "sunny",
+    "temperature" : 20
+  }, {
+    "condition" : "foggy",
+    "temperature" : 20
+  }, {
+    "condition" : "heavy rain",
+    "temperature" : 20
+  }, {
+    "condition" : "storm",
+    "temperature" : 20
+  }, {
+    "condition" : "foggy",
+    "temperature" : 25
+  } ]
+}
