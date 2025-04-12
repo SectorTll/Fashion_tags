@@ -87,7 +87,7 @@ public class WeatherViewController {
         String condition = conditionComboBox.getValue();
         
         if (condition == null || condition.isEmpty()) {
-            showAlert("Ошибка", "Необходимо выбрать погодное условие");
+            showAlert("Error", "A weather condition must be selected");
             return;
         }
         
@@ -101,8 +101,8 @@ public class WeatherViewController {
         
         // Обновляем список
         refreshWeatherListView();
-        
-        showInfo("Добавление", "Погодное условие успешно добавлено");
+
+        showInfo("Addition", "Weather condition successfully added");
     }
     
     @FXML
@@ -111,7 +111,8 @@ public class WeatherViewController {
         if (selectedWeather != null) {
             weatherService.removeWeather(selectedWeather);
             refreshWeatherListView();
-            showInfo("Удаление", "Погодное условие успешно удалено");
+            showInfo("Deletion", "Weather condition successfully deleted");
+
         }
     }
     

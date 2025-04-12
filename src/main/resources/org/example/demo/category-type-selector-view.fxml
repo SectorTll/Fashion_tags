@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" prefWidth="600" prefHeight="500" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.category.CategoryTypeSelectorController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Header -->
+    <Label text="Category Type Selection" style="-fx-font-size: 18; -fx-font-weight: bold"/>
+    <Label text="Select a category and the types associated with it" wrapText="true"/>
+
+    <Separator />
+
+    <!-- Category Selection -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Category:"/>
+        <ComboBox fx:id="categoryComboBox" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+    </HBox>
+
+    <!-- Type Selection for Category -->
+    <Label text="Select types for this category:" style="-fx-font-weight: bold"/>
+
+    <VBox fx:id="typesContainer" spacing="5" VBox.vgrow="ALWAYS">
+        <!-- Checkboxes for types will be added programmatically -->
+    </VBox>
+
+    <!-- Current State -->
+    <VBox spacing="5">
+        <Label text="Saved category types:" style="-fx-font-weight: bold"/>
+        <ListView fx:id="savedMappingsListView" prefHeight="150" />
+    </VBox>
+
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Save" fx:id="saveButton" onAction="#onSaveClick" defaultButton="true"/>
+        <Button text="Skip" onAction="#onSkipClick"/>
+        <Button text="Close" onAction="#onCloseClick"/>
+    </HBox>
+</VBox>

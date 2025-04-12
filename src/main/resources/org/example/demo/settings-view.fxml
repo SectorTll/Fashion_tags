@@ -8,16 +8,16 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Separator?>
 
-<VBox spacing="10" alignment="CENTER_LEFT" minHeight="350" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.demo.SettingsController">
+<VBox spacing="10" alignment="CENTER_LEFT" minHeight="400" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.demo.SettingsController">
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
     <VBox spacing="5">
-        <Label text="Папка с изображениями:"/>
+        <Label text="Images folder:"/>
         <HBox spacing="10">
             <TextField fx:id="directoryField" editable="false" HBox.hgrow="ALWAYS"/>
-            <Button text="Обзор..." onAction="#onBrowseDirectoryClick"/>
+            <Button text="Browse..." onAction="#onBrowseDirectoryClick"/>
         </HBox>
     </VBox>
 
@@ -28,34 +28,42 @@
     </Separator>
 
     <VBox spacing="5">
-        <Label text="Файл гардероба:"/>
+        <Label text="Wardrobe file:"/>
         <HBox spacing="10">
             <TextField fx:id="wardrobeField" editable="false" HBox.hgrow="ALWAYS"/>
-            <Button text="Обзор..." onAction="#onBrowseWardrobeClick"/>
+            <Button text="Browse..." onAction="#onBrowseWardrobeClick"/>
         </HBox>
     </VBox>
 
     <VBox spacing="5">
-        <Label text="Файл погоды (weather.json):"/>
+        <Label text="Weather file (weather.json):"/>
         <HBox spacing="10">
             <TextField fx:id="weatherField" editable="false" HBox.hgrow="ALWAYS"/>
-            <Button text="Обзор..." onAction="#onBrowseWeatherClick"/>
+            <Button text="Browse..." onAction="#onBrowseWeatherClick"/>
         </HBox>
     </VBox>
 
     <VBox spacing="5">
-        <Label text="Файл ощущений (feelings.json):"/>
+        <Label text="Style sets file (feelings.json):"/>
         <HBox spacing="10">
             <TextField fx:id="feelingsField" editable="false" HBox.hgrow="ALWAYS"/>
-            <Button text="Обзор..." onAction="#onBrowseFeelingsClick"/>
+            <Button text="Browse..." onAction="#onBrowseFeelingsClick"/>
         </HBox>
     </VBox>
 
     <VBox spacing="5">
-        <Label text="Файл ассоциаций тегов (tag_associations.json):"/>
+        <Label text="Tag associations file (tag_associations.json):"/>
         <HBox spacing="10">
             <TextField fx:id="tagAssociationsField" editable="false" HBox.hgrow="ALWAYS"/>
-            <Button text="Обзор..." onAction="#onBrowseTagAssociationsClick"/>
+            <Button text="Browse..." onAction="#onBrowseTagAssociationsClick"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Category mappings file (category_types.json):"/>
+        <HBox spacing="10">
+            <TextField fx:id="categoryTypeMappingsField" editable="false" HBox.hgrow="ALWAYS"/>
+            <Button text="Browse..." onAction="#onBrowseCategoryTypeMappingsClick"/>
         </HBox>
     </VBox>
 
@@ -63,8 +71,8 @@
         <VBox.margin>
             <Insets top="20"/>
         </VBox.margin>
-        <Button text="Сохранить" onAction="#onSaveClick" defaultButton="true"/>
-        <Button text="Отмена" onAction="#onCancelClick" cancelButton="true"/>
+        <Button text="Save" onAction="#onSaveClick" defaultButton="true"/>
+        <Button text="Cancel" onAction="#onCancelClick" cancelButton="true"/>
     </HBox>
 
 

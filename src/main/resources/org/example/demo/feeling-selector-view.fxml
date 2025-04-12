@@ -14,23 +14,23 @@
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <!-- Заголовок -->
-    <Label text="Выбор набора стилей" style="-fx-font-size: 16; -fx-font-weight: bold"/>
+    <!-- Header -->
+    <Label text="Style Set Selection" style="-fx-font-size: 16; -fx-font-weight: bold"/>
 
-    <!-- Комбобокс для выбора набора -->
+    <!-- ComboBox for selecting a style set -->
     <HBox spacing="10" alignment="CENTER_LEFT">
-        <Label text="Набор стилей:"/>
+        <Label text="Style Set:"/>
         <ComboBox fx:id="feelingComboBox" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
     </HBox>
 
-    <!-- Отображение стилей выбранного набора -->
-    <Label text="Стили в наборе:"/>
+    <!-- Display of styles in the selected set -->
+    <Label text="Styles in the Set:"/>
     <ListView fx:id="stylesListView" VBox.vgrow="ALWAYS"/>
 
-    <!-- Кнопки -->
+    <!-- Buttons -->
     <HBox spacing="10" alignment="CENTER_RIGHT">
-        <Button text="Управление наборами" onAction="#onManageFeelingsClick"/>
-        <Button text="Отмена" onAction="#onCancelClick" cancelButton="true"/>
-        <Button text="Выбрать" onAction="#onSelectClick" defaultButton="true"/>
+        <Button text="Manage Sets" onAction="#onManageFeelingsClick"/>
+        <Button text="Cancel" onAction="#onCancelClick" cancelButton="true"/>
+        <Button text="Select" onAction="#onSelectClick" defaultButton="true"/>
     </HBox>
 </VBox>

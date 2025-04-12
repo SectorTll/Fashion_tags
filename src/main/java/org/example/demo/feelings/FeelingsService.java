@@ -51,7 +51,8 @@ public class FeelingsService {
                 }
             } catch (IOException e) {
                 feelings = new Feelings();
-                showError("Ошибка загрузки наборов стилей", e.getMessage());
+                showError("Error loading style sets", e.getMessage());
+
             }
         } else {
             // Если путь не указан, создаем путь по умолчанию
@@ -69,7 +70,8 @@ public class FeelingsService {
             try {
                 feelings.saveToFile(feelingsFile);
             } catch (IOException e) {
-                showError("Ошибка сохранения наборов стилей", e.getMessage());
+                showError("Error saving style sets", e.getMessage());
+
             }
         }
     }
@@ -101,7 +103,7 @@ public class FeelingsService {
     
     private void showError(String title, String content) {
         Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("Ошибка");
+        alert.setTitle("Error");
         alert.setHeaderText(title);
         alert.setContentText(content);
         alert.showAndWait();

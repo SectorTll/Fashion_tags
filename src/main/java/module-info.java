@@ -16,4 +16,6 @@ module org.example.demo {
     opens org.example.demo.feelings to com.fasterxml.jackson.databind, javafx.fxml;
     exports org.example.demo.weather;
     opens org.example.demo.weather to com.fasterxml.jackson.databind, javafx.fxml;
+    exports org.example.demo.category;
+    opens org.example.demo.category to com.fasterxml.jackson.databind, javafx.fxml;
 }

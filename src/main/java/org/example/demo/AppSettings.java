@@ -27,12 +27,16 @@ public class AppSettings {
     @JsonProperty("tag_associations_file")
     private String tagAssociationsFile;
 
+    @JsonProperty("category_type_mappings_file")
+    private String categoryTypeMappingsFile;
+
     private AppSettings() {
         this.imagesDirectory = "";
         this.wardrobeFile = "";
         this.weatherFile = "";
         this.feelingsFile = "";
         this.tagAssociationsFile = "";
+        this.categoryTypeMappingsFile = "";
     }
 
     public String getImagesDirectory() {
@@ -78,6 +82,15 @@ public class AppSettings {
 
     public void setTagAssociationsFile(String tagAssociationsFile) {
         this.tagAssociationsFile = tagAssociationsFile;
+        saveSettings();
+    }
+
+    public String getCategoryTypeMappingsFile() {
+        return categoryTypeMappingsFile;
+    }
+
+    public void setCategoryTypeMappingsFile(String categoryTypeMappingsFile) {
+        this.categoryTypeMappingsFile = categoryTypeMappingsFile;
         saveSettings();
     }
 

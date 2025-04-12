@@ -22,7 +22,7 @@
         <VBox spacing="10" prefWidth="300" HBox.hgrow="ALWAYS">
             <Label text="Outfit Details:"/>
             <ListView fx:id="outfitListView" VBox.vgrow="ALWAYS"/>
-            <Button fx:id="addToWardrobeButton" text="Добавить выбранные элементы в гардероб"
+            <Button fx:id="addToWardrobeButton" text="Add selected items to wardrobe"
                     onAction="#onAddToWardrobeClick" maxWidth="1.7976931348623157E308"/>
         </VBox>
     </HBox>

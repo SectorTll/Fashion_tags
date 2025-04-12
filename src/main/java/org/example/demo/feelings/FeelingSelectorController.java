@@ -156,7 +156,7 @@ public class FeelingSelectorController {
             FeelingSelectorController controller = loader.getController();
 
             Stage stage = new Stage();
-            stage.setTitle("Выбор набора стилей");
+            stage.setTitle("Style Set Selection");
             stage.setScene(new Scene(root));
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner(ownerStage);

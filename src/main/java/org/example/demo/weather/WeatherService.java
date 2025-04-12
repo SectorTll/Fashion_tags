@@ -51,7 +51,7 @@ public class WeatherService {
                 }
             } catch (IOException e) {
                 weatherConditions = new WeatherConditions();
-                showError("Ошибка загрузки погодных условий", e.getMessage());
+                showError("Error loading weather conditions", e.getMessage());
             }
         } else {
             // Если путь не указан, создаем путь по умолчанию
@@ -69,7 +69,7 @@ public class WeatherService {
             try {
                 weatherConditions.saveToFile(weatherFile);
             } catch (IOException e) {
-                showError("Ошибка сохранения погодных условий", e.getMessage());
+                showError("Error saving weather conditions", e.getMessage());
             }
         }
     }
@@ -107,7 +107,7 @@ public class WeatherService {
     
     private void showError(String title, String content) {
         Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("Ошибка");
+        alert.setTitle("Error");
         alert.setHeaderText(title);
         alert.setContentText(content);
         alert.showAndWait();

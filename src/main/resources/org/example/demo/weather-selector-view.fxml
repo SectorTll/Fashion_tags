@@ -13,28 +13,28 @@
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <!-- Заголовок -->
-    <Label text="Выбор погодных условий" style="-fx-font-size: 16; -fx-font-weight: bold"/>
+    <!-- Header -->
+    <Label text="Weather Selection" style="-fx-font-size: 16; -fx-font-weight: bold"/>
 
-    <!-- Комбобокс для выбора погодных условий -->
+    <!-- ComboBox for selecting weather conditions -->
     <HBox spacing="10" alignment="CENTER_LEFT">
-        <Label text="Погодные условия:"/>
+        <Label text="Weather Conditions:"/>
         <ComboBox fx:id="weatherComboBox" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
     </HBox>
 
-    <!-- Информация о выбранном погодном условии -->
+    <!-- Information about the selected weather condition -->
     <HBox spacing="10" alignment="CENTER_LEFT">
-        <Label text="Выбрано:"/>
+        <Label text="Selected:"/>
         <Label fx:id="selectedWeatherLabel" HBox.hgrow="ALWAYS"/>
     </HBox>
 
-    <!-- Кнопки -->
+    <!-- Buttons -->
     <HBox spacing="10" alignment="CENTER_RIGHT" VBox.vgrow="ALWAYS">
         <VBox.margin>
             <Insets top="20"/>
         </VBox.margin>
-        <Button text="Управление погодой" onAction="#onManageWeatherClick"/>
-        <Button text="Отмена" onAction="#onCancelClick" cancelButton="true"/>
-        <Button text="Выбрать" onAction="#onSelectClick" defaultButton="true"/>
+        <Button text="Manage Weather" onAction="#onManageWeatherClick"/>
+        <Button text="Cancel" onAction="#onCancelClick" cancelButton="true"/>
+        <Button text="Select" onAction="#onSelectClick" defaultButton="true"/>
     </HBox>
 </VBox>

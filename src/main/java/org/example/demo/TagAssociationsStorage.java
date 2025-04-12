@@ -70,17 +70,17 @@ public class TagAssociationsStorage {
                 if (wrapper != null && wrapper.tagAssociations != null) {
                     this.tagAssociations = wrapper.tagAssociations;
                 } else {
-                    System.err.println("В файле не найдено поле tag_associations или оно пустое");
+                    System.err.println("Field tag_associations not found in file or it is empty");
                     this.tagAssociations = new ArrayList<>();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                System.err.println("Ошибка при загрузке файла ассоциаций: " + e.getMessage());
+                System.err.println("Error loading association file: " + e.getMessage());
                 // В случае ошибки начинаем с пустого списка
                 this.tagAssociations = new ArrayList<>();
             }
         } else {
-            System.out.println("Файл ассоциаций не найден, создаем новый: " + storageFilePath);
+            System.out.println("Association file not found, creating a new one: " + storageFilePath);
             this.tagAssociations = new ArrayList<>();
         }
     }

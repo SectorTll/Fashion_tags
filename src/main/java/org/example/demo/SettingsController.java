@@ -23,11 +23,14 @@ public class SettingsController {
     @FXML
     private TextField tagAssociationsField;
 
+    @FXML
+    private TextField categoryTypeMappingsField;
+
     private Stage stage;
     private AppSettings settings;
     private boolean saveClicked = false;
 
-    // В методе initialize() добавьте инициализацию нового поля
+    // In the initialize() method we initialize the new field
     @FXML
     public void initialize() {
         settings = AppSettings.getInstance();
@@ -36,6 +39,7 @@ public class SettingsController {
         weatherField.setText(settings.getWeatherFile());
         feelingsField.setText(settings.getFeelingsFile());
         tagAssociationsField.setText(settings.getTagAssociationsFile());
+        categoryTypeMappingsField.setText(settings.getCategoryTypeMappingsFile());
     }
 
     public void setStage(Stage stage) {
@@ -44,7 +48,12 @@ public class SettingsController {
 
     @FXML
     private void onBrowseTagAssociationsClick() {
-        browseJsonFile("Выберите файл ассоциаций тегов (tag_associations.json)", tagAssociationsField);
+        browseJsonFile("Select the tag associations file (tag_associations.json)", tagAssociationsField);
+    }
+
+    @FXML
+    private void onBrowseCategoryTypeMappingsClick() {
+        browseJsonFile("Select the category type mappings file (category_types.json)", categoryTypeMappingsField);
     }
 
     @FXML
@@ -54,6 +63,7 @@ public class SettingsController {
         settings.setWeatherFile(weatherField.getText());
         settings.setFeelingsFile(feelingsField.getText());
         settings.setTagAssociationsFile(tagAssociationsField.getText());
+        settings.setCategoryTypeMappingsFile(categoryTypeMappingsField.getText());
         saveClicked = true;
         stage.close();
     }
@@ -61,7 +71,7 @@ public class SettingsController {
     @FXML
     private void onBrowseDirectoryClick() {
         DirectoryChooser directoryChooser = new DirectoryChooser();
-        directoryChooser.setTitle("Выберите папку с изображениями");
+        directoryChooser.setTitle("Select the image directory");
 
         String currentDir = directoryField.getText();
         if (!currentDir.isEmpty()) {
@@ -79,24 +89,24 @@ public class SettingsController {
 
     @FXML
     private void onBrowseWardrobeClick() {
-        browseJsonFile("Выберите файл гардероба", wardrobeField);
+        browseJsonFile("Select wardrobe file", wardrobeField);
     }
 
     @FXML
     private void onBrowseWeatherClick() {
-        browseJsonFile("Выберите файл погоды (weather.json)", weatherField);
+        browseJsonFile("Select weather file (weather.json)", weatherField);
     }
 
     @FXML
     private void onBrowseFeelingsClick() {
-        browseJsonFile("Выберите файл ощущений (feelings.json)", feelingsField);
+        browseJsonFile("Select the feelings file (feelings.json)", feelingsField);
     }
 
     private void browseJsonFile(String title, TextField targetField) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(title);
         fileChooser.getExtensionFilters().add(
-                new FileChooser.ExtensionFilter("JSON файлы", "*.json")
+                new FileChooser.ExtensionFilter("JSON Files", "*.json")
         );
 
         String currentFile = targetField.getText();

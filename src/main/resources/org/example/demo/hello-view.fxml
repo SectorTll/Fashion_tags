@@ -16,14 +16,18 @@
 
 <VBox alignment="CENTER" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.HelloController">
     <MenuBar>
-        <Menu text="Файл">
-            <MenuItem onAction="#onSelectFolderClick" text="Выбрать папку" />
-            <MenuItem onAction="#onSettingsMenuClick" text="Настройки" />
+        <Menu text="File">
+            <MenuItem onAction="#onSelectFolderClick" text="Select Folder" />
+            <MenuItem onAction="#onSettingsMenuClick" text="Settings" />
         </Menu>
-        <Menu text="Гардероб">
-            <MenuItem text="Просмотр гардероба" onAction="#onViewWardrobeClick" />
-            <MenuItem text="Управление наборами стилей" onAction="#onManageFeelingsClick" />
-            <MenuItem text="Управление погодными условиями" onAction="#onManageWeatherClick" />
+        <Menu text="Wardrobe">
+            <MenuItem text="View Wardrobe" onAction="#onViewWardrobeClick" />
+            <MenuItem text="Style Sets Management" onAction="#onManageFeelingsClick" />
+            <MenuItem text="Weather Conditions Management" onAction="#onManageWeatherClick" />
+            <MenuItem text="Category Types Management" onAction="#onManageCategoryTypesClick" />
+        </Menu>
+        <Menu text="Tools">
+            <MenuItem text="Check Associations" onAction="#onCheckAssociationsClick" />
         </Menu>
     </MenuBar>
 
@@ -32,41 +36,47 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </padding>
         <children>
-            <!-- Легенда и информация о статистике -->
+            <!-- Legend and statistics information -->
             <FlowPane fx:id="legendPane" layoutX="6.0" layoutY="6.0" hgap="15" vgap="5"
                       AnchorPane.topAnchor="6.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
                 <padding>
                     <Insets bottom="5.0" top="5.0" />
                 </padding>
 
-                <!-- Элемент легенды для синей полосы сверху -->
+                <!-- Legend element for blue top bar -->
                 <HBox alignment="CENTER_LEFT" spacing="5">
                     <VBox alignment="CENTER" spacing="0">
                         <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #3498DB;" />
                         <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
                     </VBox>
-                    <Label text="Есть связи тегов:" />
+                    <Label text="Has tag associations:" />
                     <Label fx:id="totalAssociationsLabel" text="0" style="-fx-font-weight: bold" />
                 </HBox>
 
-                <!-- Элемент легенды для зеленой полосы снизу -->
+                <!-- Legend element for green bottom bar -->
                 <HBox alignment="CENTER_LEFT" spacing="5">
                     <VBox alignment="CENTER" spacing="0">
                         <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
                         <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #2ECC71;" />
                     </VBox>
-                    <Label text="В гардеробе:" />
+                    <Label text="In wardrobe:" />
                     <Label fx:id="totalItemsLabel" text="0" style="-fx-font-weight: bold" />
                 </HBox>
 
-                <!-- Элемент легенды для обоих случаев -->
+                <!-- Legend element for both cases -->
                 <HBox alignment="CENTER_LEFT" spacing="5">
                     <VBox alignment="CENTER" spacing="0">
                         <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #3498DB;" />
                         <Region prefWidth="30" prefHeight="15" style="-fx-background-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1;" />
                         <Region prefWidth="30" prefHeight="5" style="-fx-background-color: #2ECC71;" />
                     </VBox>
-                    <Label text="В гардеробе и есть связи" />
+                    <Label text="In wardrobe and has associations" />
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Region prefWidth="30" prefHeight="20" style="-fx-background-color: transparent; -fx-border-color: #FF0000; -fx-border-width: 2;" />
+                    <Label text="Images with issues:" />
+                    <Label fx:id="totalIssuesLabel" text="0" style="-fx-font-weight: bold; -fx-text-fill: #FF0000;" />
                 </HBox>
             </FlowPane>
 
@@ -82,13 +92,13 @@
         </children>
     </AnchorPane>
 
-    <!-- Статус бар -->
+    <!-- Status bar -->
     <HBox spacing="10" style="-fx-background-color: #F0F0F0; -fx-border-width: 1 0 0 0; -fx-border-color: #CCCCCC;">
         <padding>
             <Insets bottom="5" left="10" right="10" top="5" />
         </padding>
         <children>
-            <Label fx:id="statusLabel" text="Готово" HBox.hgrow="ALWAYS" />
+            <Label fx:id="statusLabel" text="Ready" HBox.hgrow="ALWAYS" />
             <ProgressBar fx:id="loadingProgress" prefHeight="20" prefWidth="200" visible="false" />
         </children>
     </HBox>

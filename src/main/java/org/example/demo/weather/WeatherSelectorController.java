@@ -92,7 +92,7 @@ public class WeatherSelectorController {
             Parent root = loader.load();
             
             Stage stage = new Stage();
-            stage.setTitle("Управление погодными условиями");
+            stage.setTitle("Weather Management");
             stage.setScene(new Scene(root));
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner(weatherComboBox.getScene().getWindow());
@@ -157,7 +157,7 @@ public class WeatherSelectorController {
             WeatherSelectorController controller = loader.getController();
             
             Stage stage = new Stage();
-            stage.setTitle("Выбор погодных условий");
+            stage.setTitle("Weather Selection");
             stage.setScene(new Scene(root));
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner(ownerStage);

@@ -113,7 +113,8 @@ public class FeelingsViewController {
         String name = nameField.getText().trim();
         
         if (name.isEmpty()) {
-            showAlert("Ошибка", "Необходимо указать название набора стилей");
+            showAlert("Error", "A style set name must be specified");
+
             return;
         }
         
@@ -126,7 +127,8 @@ public class FeelingsViewController {
         }
         
         if (selectedStyles.isEmpty()) {
-            showAlert("Ошибка", "Необходимо выбрать хотя бы один стиль");
+            showAlert("Error", "Select at least one style");
+
             return;
         }
         
@@ -147,7 +149,7 @@ public class FeelingsViewController {
         refreshFeelingsListView();
         resetEditForm();
         
-        showInfo("Сохранение", "Набор стилей успешно сохранен");
+        showInfo("Save", "Style set saved successfully");
     }
     
     @FXML
@@ -157,7 +159,8 @@ public class FeelingsViewController {
             feelingsService.removeFeeling(selectedFeeling.getName());
             refreshFeelingsListView();
             resetEditForm();
-            showInfo("Удаление", "Набор стилей успешно удален");
+            showInfo("Deletion", "Style set successfully deleted");
+
         }
     }
     
@@ -183,8 +186,9 @@ public class FeelingsViewController {
             }
             
             // Обновляем заголовок и кнопку
-            createEditLabel.setText("Редактирование набора стилей:");
-            saveButton.setText("Обновить");
+            createEditLabel.setText("Editing style set:");
+
+            saveButton.setText("Refresh");
         }
     }
     
@@ -197,8 +201,8 @@ public class FeelingsViewController {
         currentlyEditing = null;
         nameField.clear();
         styleCheckboxes.values().forEach(cb -> cb.setSelected(false));
-        createEditLabel.setText("Создание нового набора:");
-        saveButton.setText("Сохранить");
+        createEditLabel.setText("New set creation:");
+        saveButton.setText("Save");
     }
     
     @FXML

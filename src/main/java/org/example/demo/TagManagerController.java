@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -35,6 +36,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.example.demo.category.CategoryTypeMappingService;
+import org.example.demo.category.ClothingType;
 import org.example.demo.wardrobe.WardrobeItem;
 import org.example.demo.wardrobe.WardrobeService;
 import org.example.demo.feelings.Feeling;
@@ -83,12 +86,14 @@ public class TagManagerController {
     private ObservableList<TagItem> selectedTags;
     private ObservableList<Weather> weatherItems;
     private ObservableList<Feeling> feelingItems;
+    private CategoryTypeMappingService categoryTypeMappingService = CategoryTypeMappingService.getInstance();
 
     // Ссылка на главный контроллер
     private HelloController mainController;
 
     /**
      * Устанавливает ссылку на главный контроллер
+     *
      * @param controller экземпляр HelloController
      */
     public void setMainController(HelloController controller) {
@@ -161,7 +166,7 @@ public class TagManagerController {
                 this.tagAssociationsStorage = TagAssociationsStorage.getInstance();
             } catch (Exception e) {
                 e.printStackTrace();
-                System.err.println("Ошибка инициализации хранилища ассоциаций: " + e.getMessage());
+                System.err.println("Error initializing the association store: " + e.getMessage());
                 // Создаем пустое хранилище в случае ошибки
                 this.tagAssociationsStorage = null;
             }
@@ -204,7 +209,8 @@ public class TagManagerController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            showAlert("Ошибка инициализации", "Не удалось инициализировать окно: " + e.getMessage());
+            showAlert("Initialization Error", "Failed to initialize the window: " + e.getMessage());
+
         }
     }
 
@@ -233,12 +239,14 @@ public class TagManagerController {
                 sourceTagsListView.setItems(FXCollections.observableArrayList(sourceTags));
 
             } else {
-                showAlert("Ошибка", "Файл описания не найден: " + jsonPath);
+                showAlert("Error", "Description file not found: " + jsonPath);
+
             }
 
         } catch (Exception e) {
             e.printStackTrace();
-            showAlert("Ошибка", "Не удалось загрузить данные: " + e.getMessage());
+            showAlert("Error", "Failed to load data: " + e.getMessage());
+
         }
     }
 
@@ -446,7 +454,8 @@ public class TagManagerController {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("Ошибка при парсинге тега: " + tagString);
+            System.err.println("Error parsing tag: " + tagString);
+
         }
     }
 
@@ -468,25 +477,26 @@ public class TagManagerController {
 
     /**
      * Отображает полноразмерное изображение в новом окне
+     *
      * @param imageFileName имя файла изображения
      */
     private void showFullImageFromWardrobe(String imageFileName) {
         try {
             String imagesDirectory = AppSettings.getInstance().getImagesDirectory();
             if (imagesDirectory == null || imagesDirectory.isEmpty()) {
-                showAlert("Ошибка", "Не указана директория с изображениями");
+                showAlert("Error", "Image directory not specified");
                 return;
             }
 
             File imageFile = new File(imagesDirectory, imageFileName);
             if (!imageFile.exists()) {
-                showAlert("Ошибка", "Файл изображения не найден: " + imageFile.getAbsolutePath());
+                showAlert("Error", "Image file is not found: " + imageFile.getAbsolutePath());
                 return;
             }
 
             // Создаем окно предпросмотра
             Stage previewStage = new Stage();
-            previewStage.setTitle("Просмотр: " + imageFileName);
+            previewStage.setTitle("View: " + imageFileName);
             previewStage.initModality(Modality.WINDOW_MODAL);
             previewStage.initOwner(sourceImageView.getScene().getWindow());
 
@@ -498,7 +508,7 @@ public class TagManagerController {
             Image image = ThumbnailCache.getInstance().getThumbnail(imageFileName, maxWidth, maxHeight);
 
             if (image == null) {
-                showAlert("Ошибка", "Не удалось загрузить изображение");
+                showAlert("Error", "Image loading failed");
                 return;
             }
 
@@ -511,7 +521,7 @@ public class TagManagerController {
             root.setAlignment(javafx.geometry.Pos.CENTER);
 
             // Добавляем кнопку закрытия
-            Button closeButton = new Button("Закрыть");
+            Button closeButton = new Button("Close");
             closeButton.setOnAction(e -> previewStage.close());
             root.getChildren().add(closeButton);
 
@@ -521,7 +531,7 @@ public class TagManagerController {
             previewStage.show();
         } catch (Exception e) {
             e.printStackTrace();
-            showAlert("Ошибка", "Не удалось загрузить изображение: " + e.getMessage());
+            showAlert("Error", "Image loading failed: " + e.getMessage());
         }
     }
 
@@ -568,7 +578,7 @@ public class TagManagerController {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                System.err.println("Ошибка при загрузке ассоциаций: " + e.getMessage());
+                System.err.println("Error loading associations: " + e.getMessage());
             }
         }
 
@@ -579,7 +589,7 @@ public class TagManagerController {
     private void setupFilters() {
         // Заполняем выпадающий список категорий
         List<String> categories = wardrobeService.getAllCategories();
-        categories.add(0, "Все категории"); // Добавляем опцию "Все"
+        categories.add(0, "All"); // Добавляем опцию "Все"
         categoryFilter.setItems(FXCollections.observableArrayList(categories));
         categoryFilter.getSelectionModel().selectFirst();
 
@@ -596,7 +606,7 @@ public class TagManagerController {
             WardrobeItem item = wrapper.getItem();
 
             // Проверяем фильтр категории
-            boolean matchesCategory = "Все категории".equals(selectedCategory) ||
+            boolean matchesCategory = "All".equals(selectedCategory) ||
                     item.getCategory().equals(selectedCategory);
 
             // Проверяем фильтр тегов
@@ -620,7 +630,7 @@ public class TagManagerController {
                 wardrobeTagsListView.getSelectionModel().getSelectedItems();
 
         if (selectedItems.isEmpty()) {
-            showAlert("Предупреждение", "Не выбрано ни одного элемента гардероба");
+            showAlert("Warning", "You haven't selected any wardrobe items");
             return;
         }
 
@@ -647,7 +657,7 @@ public class TagManagerController {
                 selectedTagsListView.getSelectionModel().getSelectedItems();
 
         if (selectedItems.isEmpty()) {
-            showAlert("Предупреждение", "Не выбрано ни одного элемента для удаления");
+            showAlert("Warning", "No items selected for removal");
             return;
         }
 
@@ -661,19 +671,75 @@ public class TagManagerController {
     @FXML
     private void onSaveTagAssociationsClick() {
         try {
-            // Проверяем, доступно ли хранилище ассоциаций
+            // Check if the associations storage is available
             if (tagAssociationsStorage == null) {
-                throw new Exception("Хранилище ассоциаций недоступно. Пожалуйста, проверьте настройки приложения.");
+                throw new Exception("Associations storage is unavailable. Please check application settings.");
             }
 
-            // Проверяем, выбраны ли погода и стиль
+            // Check if weather and style are selected
             selectedWeather = weatherListView.getSelectionModel().getSelectedItem();
             selectedFeeling = feelingListView.getSelectionModel().getSelectedItem();
 
-            // Создаем новую ассоциацию для текущего изображения
+            // Check that weather is selected
+            if (selectedWeather == null) {
+                showAlert("Error", "Please select weather conditions.");
+                return;
+            }
+
+            // Check that style is selected
+            if (selectedFeeling == null) {
+                showAlert("Error", "Please select a style set (feeling).");
+                return;
+            }
+
+            // Get list of wardrobe items
+            List<WardrobeItem> wardrobeItems = wardrobeService.getAllItems();
+
+            boolean hasTorso = false;
+            boolean hasLegs = false;
+            boolean hasHips = false;
+
+            // Check that all selected tags are present in the wardrobe
+            for (TagItem tagItem : selectedTags) {
+                boolean foundInWardrobe = false;
+                for (WardrobeItem wardrobeItem : wardrobeItems) {
+                    if (wardrobeItem.getCategory().equals(tagItem.getCategory()) &&
+                            wardrobeItem.getTags().containsAll(tagItem.getTags()) &&
+                            tagItem.getTags().containsAll(wardrobeItem.getTags())) {
+                        foundInWardrobe = true;
+                        break;
+                    }
+                }
+
+                if (!foundInWardrobe) {
+                    showAlert("Error", "Tag '" + tagItem.toString() + "' not found in wardrobe. " +
+                            "All selected tags must be present in the wardrobe.");
+                    return;
+                }
+
+                var t = categoryTypeMappingService.getTypesForCategory(tagItem.getCategory());
+                for (var clType : t) {
+                    if (clType.equals(ClothingType.TORSO))
+                        hasTorso = true;
+
+                    if (clType.equals(ClothingType.LEGS))
+                        hasLegs = true;
+
+                    if (clType.equals(ClothingType.HIPS))
+                        hasHips = true;
+                }
+            }
+
+            if (!hasTorso ) {
+                showAlert("Error", "Following parts is not covered. Torso: " + hasTorso + ", Legs: " + hasLegs + ", Hips: " + hasHips);
+                return;
+            }
+
+
+            // Create a new association for the current image
             TagAssociation association = new TagAssociation(imageFile.getName());
 
-            // Добавляем оригинальные теги изображения
+            // Add original image tags
             if (outfitDetails != null && outfitDetails.getOutfit() != null) {
                 for (OutfitItem outfitItem : outfitDetails.getOutfit()) {
                     TagItem originalTag = new TagItem(
@@ -684,30 +750,33 @@ public class TagManagerController {
                 }
             }
 
-            // Добавляем все выбранные эталонные теги
+            // Add all selected reference tags
             for (TagItem tagItem : selectedTags) {
                 association.addReferenceTagItem(tagItem);
             }
 
-            // Добавляем выбранную погоду
+            // Add selected weather
             association.setWeather(selectedWeather);
 
-            // Добавляем выбранный набор стилей
+            // Add selected style set
             association.setFeeling(selectedFeeling);
 
-            // Сохраняем ассоциацию
+            // Save association
             tagAssociationsStorage.saveAssociation(association);
 
-            // Обновляем отображение изображений на главном экране
+            // Update image display on main screen
             refreshMainView();
 
-            // Закрываем окно без показа диалогового окна об успешном сохранении
+            // Show success message
+            showInfo("Success", "Associations saved successfully.");
+
+            // Close window
             Stage stage = (Stage) sourceImageView.getScene().getWindow();
             stage.close();
 
         } catch (Exception e) {
             e.printStackTrace();
-            showAlert("Ошибка", "Не удалось сохранить ассоциации: " + e.getMessage());
+            showAlert("Error", "Failed to save associations: " + e.getMessage());
         }
     }
 
@@ -728,7 +797,7 @@ public class TagManagerController {
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(AlertType.WARNING);
-        alert.setTitle("Предупреждение");
+        alert.setTitle("Warning");
         alert.setHeaderText(title);
         alert.setContentText(message);
         alert.showAndWait();
@@ -736,7 +805,7 @@ public class TagManagerController {
 
     private void showInfo(String title, String message) {
         Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Информация");
+        alert.setTitle("Information");
         alert.setHeaderText(title);
         alert.setContentText(message);
         alert.showAndWait();

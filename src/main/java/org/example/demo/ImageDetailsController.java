@@ -152,7 +152,7 @@ public class ImageDetailsController {
     private void onAddToWardrobeClick() {
         // Проверяем, что у нас есть данные и есть выбранные элементы
         if (outfitDetails == null || outfitListView.getSelectionModel().getSelectedItems().isEmpty()) {
-            showAlert("Ошибка", "Выберите элементы для добавления в гардероб");
+            showAlert("Error", "Please select items to add to wardrobe");
             return;
         }
 
@@ -184,19 +184,19 @@ public class ImageDetailsController {
         }
 
         if (addedCount == 0) {
-            showAlert("Информация", "Выбранные элементы уже добавлены в гардероб");
+            showAlert("Information", "Selected items are already in the wardrobe");
         } else {
-            showSuccess("Добавлено в гардероб", "Добавлено " + addedCount +
-                    " элемент" + (addedCount == 1 ? "" : (addedCount < 5 ? "а" : "ов")) + " в гардероб.");
+            showSuccess("Added to wardrobe", "Added " + addedCount +
+                    " item" + (addedCount != 1 ? "s" : "") + " to the wardrobe.");
 
-            // Обновляем отображение для отражения изменений
+            // Update the display to reflect changes
             initialize(imageFile);
         }
     }
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(AlertType.WARNING);
-        alert.setTitle("Предупреждение");
+        alert.setTitle("Warning");
         alert.setHeaderText(title);
         alert.setContentText(message);
         alert.showAndWait();
@@ -204,7 +204,7 @@ public class ImageDetailsController {
 
     private void showSuccess(String title, String message) {
         Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Информация");
+        alert.setTitle("Info");
         alert.setHeaderText(title);
         alert.setContentText(message);
         alert.showAndWait();

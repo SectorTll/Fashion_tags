@@ -15,37 +15,37 @@
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <!-- Заголовок -->
-    <Label text="Управление погодными условиями" style="-fx-font-size: 18; -fx-font-weight: bold"/>
+    <!-- Header -->
+    <Label text="Weather Management" style="-fx-font-size: 18; -fx-font-weight: bold"/>
 
     <HBox spacing="15" VBox.vgrow="ALWAYS">
-        <!-- Левая панель с существующими погодными условиями -->
+        <!-- Left panel with existing weather conditions -->
         <VBox spacing="10" prefWidth="280">
-            <Label text="Сохраненные погодные условия:" style="-fx-font-weight: bold"/>
+            <Label text="Saved Weather Conditions:" style="-fx-font-weight: bold"/>
             <ListView fx:id="weatherListView" VBox.vgrow="ALWAYS"/>
             <HBox spacing="10">
-                <Button text="Удалить" fx:id="removeButton" onAction="#onRemoveClick"/>
+                <Button text="Delete" fx:id="removeButton" onAction="#onRemoveClick"/>
             </HBox>
         </VBox>
 
-        <!-- Правая панель для создания нового погодного условия -->
+        <!-- Right panel for creating a new weather condition -->
         <VBox spacing="10" prefWidth="280" HBox.hgrow="ALWAYS">
-            <Label text="Создание нового погодного условия:" style="-fx-font-weight: bold"/>
-            
-            <Label text="Погодное условие:"/>
+            <Label text="Create New Weather Condition:" style="-fx-font-weight: bold"/>
+
+            <Label text="Weather Condition:"/>
             <ComboBox fx:id="conditionComboBox" maxWidth="Infinity"/>
-            
-            <Label text="Температура (°C):"/>
+
+            <Label text="Temperature (°C):"/>
             <Spinner fx:id="temperatureSpinner" maxWidth="100"/>
-            
+
             <HBox spacing="10" alignment="CENTER_RIGHT">
-                <Button text="Очистить" onAction="#onClearClick"/>
-                <Button text="Добавить" fx:id="addButton" onAction="#onAddClick"/>
+                <Button text="Clear" onAction="#onClearClick"/>
+                <Button text="Add" fx:id="addButton" onAction="#onAddClick"/>
             </HBox>
         </VBox>
     </HBox>
 
     <HBox spacing="10" alignment="CENTER_RIGHT">
-        <Button text="Закрыть" onAction="#onCloseClick"/>
+        <Button text="Close" onAction="#onCloseClick"/>
     </HBox>
 </VBox>

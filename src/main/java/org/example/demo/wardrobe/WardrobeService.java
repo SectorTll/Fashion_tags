@@ -31,7 +31,7 @@ public class WardrobeService {
                 wardrobe = Wardrobe.loadFromFile(wardrobeFile);
             } catch (IOException e) {
                 wardrobe = new Wardrobe();
-                showError("Ошибка загрузки гардероба", e.getMessage());
+                showError("Error loading wardrobe", e.getMessage());
             }
         } else {
             wardrobe = new Wardrobe();
@@ -44,7 +44,7 @@ public class WardrobeService {
             try {
                 wardrobe.saveToFile(wardrobeFile);
             } catch (IOException e) {
-                showError("Ошибка сохранения гардероба", e.getMessage());
+                showError("Error saving wardrobe", e.getMessage());
             }
         }
     }
@@ -81,7 +81,7 @@ public class WardrobeService {
 
     private void showError(String title, String content) {
         Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("Ошибка");
+        alert.setTitle("Error");
         alert.setHeaderText(title);
         alert.setContentText(content);
         alert.showAndWait();

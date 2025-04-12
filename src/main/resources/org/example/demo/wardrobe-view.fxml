@@ -21,41 +21,41 @@
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <!-- Заголовок -->
-    <Label text="Гардероб" style="-fx-font-size: 18; -fx-font-weight: bold"/>
+    <!-- Header -->
+    <Label text="Wardrobe" style="-fx-font-size: 18; -fx-font-weight: bold"/>
 
-    <!-- Фильтры -->
+    <!-- Filters -->
     <HBox spacing="10" alignment="CENTER_LEFT">
-        <Label text="Категория:"/>
+        <Label text="Category:"/>
         <ComboBox fx:id="categoryFilter" minWidth="150"/>
 
-        <Label text="Тег:" HBox.hgrow="ALWAYS">
+        <Label text="Tag:" HBox.hgrow="ALWAYS">
             <HBox.margin>
                 <Insets left="20"/>
             </HBox.margin>
         </Label>
         <TextField fx:id="tagFilter" minWidth="200"/>
 
-        <Button text="Сбросить фильтры" onAction="#onResetFiltersClick">
+        <Button text="Reset Filters" onAction="#onResetFiltersClick">
             <HBox.margin>
                 <Insets left="20"/>
             </HBox.margin>
         </Button>
     </HBox>
 
-    <!-- Секция с основным содержимым и статистикой -->
+    <!-- Section with main content and statistics -->
     <HBox spacing="15" VBox.vgrow="ALWAYS">
-        <!-- Список элементов гардероба с миниатюрами -->
+        <!-- List of wardrobe items with thumbnails -->
         <ListView fx:id="itemsListView" HBox.hgrow="ALWAYS"/>
 
-        <!-- Секция статистики -->
+        <!-- Statistics Section -->
         <VBox spacing="10" prefWidth="300">
-            <Label text="Статистика гардероба" style="-fx-font-size: 14; -fx-font-weight: bold"/>
+            <Label text="Wardrobe Statistics" style="-fx-font-size: 14; -fx-font-weight: bold"/>
 
-            <!-- Табы для разных видов статистики -->
+            <!-- Tabs for different types of statistics -->
             <TabPane fx:id="statisticsTabPane" VBox.vgrow="ALWAYS">
-                <!-- Вкладка категорий -->
-                <Tab text="Категории" closable="false">
+                <!-- Categories Tab -->
+                <Tab text="Categories" closable="false">
                     <ScrollPane fitToWidth="true" fitToHeight="true">
                         <GridPane fx:id="categoriesGrid" vgap="5" hgap="10">
                             <columnConstraints>
@@ -66,8 +66,8 @@
                     </ScrollPane>
                 </Tab>
 
-                <!-- Вкладка тегов -->
-                <Tab text="Теги" closable="false">
+                <!-- Tags Tab -->
+                <Tab text="Tags" closable="false">
                     <ScrollPane fitToWidth="true" fitToHeight="true">
                         <GridPane fx:id="tagsGrid" vgap="5" hgap="10">
                             <columnConstraints>
@@ -78,8 +78,8 @@
                     </ScrollPane>
                 </Tab>
 
-                <!-- Вкладка "Облако тегов" -->
-                <Tab text="Облако тегов" closable="false">
+                <!-- Tag Cloud Tab -->
+                <Tab text="Tag Cloud" closable="false">
                     <ScrollPane fitToWidth="true" fitToHeight="true">
                         <TilePane fx:id="tagCloudPane" hgap="10" vgap="10">
                             <padding>
@@ -92,9 +92,9 @@
         </VBox>
     </HBox>
 
-    <!-- Действия -->
+    <!-- Actions -->
     <HBox spacing="10" alignment="CENTER_RIGHT">
-        <Button fx:id="removeItemButton" text="Удалить" onAction="#onRemoveClick"/>
-        <Button text="Закрыть" onAction="#onCloseClick"/>
+        <Button fx:id="removeItemButton" text="Delete" onAction="#onRemoveClick"/>
+        <Button text="Close" onAction="#onCloseClick"/>
     </HBox>
 </VBox>

@@ -236,7 +236,7 @@ public class WardrobeViewController {
         categoriesGrid.getChildren().clear();
 
         // Добавляем заголовки
-        Label categoryHeader = new Label("Категория");
+        Label categoryHeader = new Label("Category");
         categoryHeader.setStyle("-fx-font-weight: bold;");
         Label countHeader = new Label("Количество");
         countHeader.setStyle("-fx-font-weight: bold;");
@@ -354,7 +354,7 @@ public class WardrobeViewController {
     private void setupFilters() {
         // Заполняем выпадающий список категорий
         List<String> categories = wardrobeService.getAllCategories();
-        categories.add(0, "Все категории"); // Добавляем опцию "Все"
+        categories.add(0, "All"); // Добавляем опцию "Все"
         categoryFilter.setItems(FXCollections.observableArrayList(categories));
         categoryFilter.getSelectionModel().selectFirst();
 
@@ -371,7 +371,7 @@ public class WardrobeViewController {
             WardrobeItem item = wrapper.getItem();
 
             // Проверяем фильтр категории
-            boolean matchesCategory = "Все категории".equals(selectedCategory) ||
+            boolean matchesCategory = "All".equals(selectedCategory) ||
                     item.getCategory().equals(selectedCategory);
 
             // Проверяем фильтр тегов
@@ -385,13 +385,13 @@ public class WardrobeViewController {
 
     private void showImagePreview(String fileName) {
         if (imagesDirectory == null || imagesDirectory.isEmpty()) {
-            showAlert("Ошибка", "Не указана директория с изображениями");
+            showAlert("Error", "Image directory not specified");
             return;
         }
 
         File imageFile = new File(imagesDirectory, fileName);
         if (!imageFile.exists()) {
-            showAlert("Ошибка", "Файл изображения не найден: " + imageFile.getAbsolutePath());
+            showAlert("Error", "Image file is not found: " + imageFile.getAbsolutePath());
             return;
         }
 
@@ -440,7 +440,7 @@ public class WardrobeViewController {
             previewStage.show();
 
         } catch (FileNotFoundException e) {
-            showAlert("Ошибка", "Не удалось загрузить изображение: " + e.getMessage());
+            showAlert("Error", "Image loading error: " + e.getMessage());
         }
     }
 
@@ -453,7 +453,7 @@ public class WardrobeViewController {
             setupFilters();
             loadStatistics();
 
-            showInfo("Удаление", "Элемент успешно удален из гардероба");
+            showInfo("Deletion", "Item successfully removed from wardrobe");
         }
     }
 
